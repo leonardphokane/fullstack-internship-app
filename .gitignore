@@ -1,0 +1,34 @@
+# Root-level ignore for fullstack-internship-app
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backend build and dist
+backend/dist/
+backend/build/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Prisma
+backend/prisma/migrations/
+backend/prisma/dev.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
