@@ -1,0 +1,18 @@
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links li:hover {
+  color: #0ff;
+}
+
+.login {
+  color: #0ff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.logout {
+  color: #0ff;
+}

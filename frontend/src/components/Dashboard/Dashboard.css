@@ -1,0 +1,89 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #0a0a0f, #000);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  background: rgba(10, 10, 20, 0.9);
+  border-right: 2px solid #0ff;
+  padding: 20px;
+  margin-top: 60px;
+  box-shadow: 0 0 20px #0ff;
+}
+
+.sidebar h3 {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sidebar li:hover {
+  color: #0ff;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcards {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: rgba(20, 20, 40, 0.9);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 30px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 0 20px #0ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff;
+}
+
+.dashboard-card {
+  border-color: #00ffff;
+}
+
+.posts-card {
+  border-color: #ff00ff;
+}
+
+.profile-card {
+  border-color: #00ff99;
+}
+
+.engineering-image {
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 20px #00ffff;
+}
+
+.engineering-image h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
