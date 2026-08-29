@@ -14,13 +14,19 @@ It demonstrates end‑to‑end typed development with a **Node.js + Express + Po
 
 ---
 
-## 📸 Preview
+# 📸 Preview
+![Dashboard](images/dashboard-preview.png)
 
-### Dashboard
-![Dashboard Preview](images/dashboard-preview.png)
+## 📸 Screenshots
 
-### Screenshot
-![App Screenshot](images/screenshot.png)
+| Posts | MyPosts |
+|-------|---------|
+| <img src="images/posts-preview.png" width="400"/> | <img src="images/myposts-preview.png" width="400"/> |
+
+| Profile | Login |
+|---------|-------|
+| <img src="images/profile-preview.png" width="400"/> | <img src="images/login-preview.png" width="400"/> |
+
 
 ---
 
