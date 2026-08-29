@@ -47,7 +47,6 @@ README.md
 
 ## ⚙️ Setup Instructions
 
----
 
 ### 1. Clone the repo
 ```bash
@@ -56,14 +55,12 @@ cd fullstack-internship-app
 
 ```
 
-2. Backend setup
+### 2. Backend setup
 ```bash
 cd backend
 npm install
+
 Create a .env file:
-
-
-
 
 DATABASE_URL=postgresql://postgres:<password>@<railway-host>:<port>/railway
 JWT_SECRET=supersecretkey
@@ -71,7 +68,7 @@ PORT=4000
 
 ```
 
-### Run backend:
+Run backend:
 
 ```bash
 npm run dev
@@ -99,9 +96,10 @@ Protected routes: /posts, /myposts, /profile.
 ---
 
 ## 🧪 Running Tests
-From the frontend folder:
 
-```bash
+```bashFrom the frontend folder:
+
+
 npm test
 From the backend folder:
 
@@ -140,3 +138,5 @@ Profile page
 
 Leonard Phokane — AI/ML student & freelance full‑stack engineer.
 Built as part of the **CodingAtom Fullstack Engineering Internship Assessment**.
+
+![Footer](images/footer.png)

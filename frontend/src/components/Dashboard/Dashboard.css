@@ -1,89 +1,96 @@
 .dashboard {
-  display: flex;
+  flex: 1;
   min-height: 100vh;
-  background: radial-gradient(circle at top left, #0a0a0f, #000);
+  background: linear-gradient(135deg, #0a0a0f 0%, #000 100%);
   color: white;
   font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-left: 220px; /* sidebar offset */
+  padding-top: 60px;  /* navbar offset */
 }
 
-.sidebar {
-  width: 220px;
-  background: rgba(10, 10, 20, 0.9);
-  border-right: 2px solid #0ff;
-  padding: 20px;
-  margin-top: 60px;
-  box-shadow: 0 0 20px #0ff;
-}
-
-.sidebar h3 {
-  color: #0ff;
-  text-shadow: 0 0 10px #0ff;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin: 15px 0;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.sidebar li:hover {
-  color: #0ff;
-}
-
+/* Main content */
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 40px;
 }
 
+/* Flashcards row */
 .flashcards {
   display: flex;
   gap: 30px;
   margin-bottom: 40px;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .card {
-  background: rgba(20, 20, 40, 0.9);
+  background: rgba(20, 20, 40, 0.6);
+  backdrop-filter: blur(10px);
   border: 2px solid transparent;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 30px;
-  width: 220px;
+  width: 240px;
   text-align: center;
   box-shadow: 0 0 20px #0ff;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #0ff;
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 40px #0ff;
+  border-color: #0ff;
+  color: #0ff;
 }
 
-.dashboard-card {
-  border-color: #00ffff;
-}
+/* Card colors */
+.dashboard-card { border-color: #00ffff; box-shadow: 0 0 20px #00ffff; }
+.posts-card { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff; }
+.profile-card { border-color: #00ff99; box-shadow: 0 0 20px #00ff99; }
 
-.posts-card {
-  border-color: #ff00ff;
-}
-
-.profile-card {
-  border-color: #00ff99;
-}
-
+/* Footer banner */
 .engineering-image {
+  margin-top: 40px;
   text-align: center;
-  color: #00ffff;
-  text-shadow: 0 0 20px #00ffff;
+  color: #0ff;
+  text-shadow: 0 0 20px #0ff;
+  animation: pulseGlow 3s infinite alternate;
 }
 
 .engineering-image h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 10px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.engineering-image h1:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 30px #0ff;
+}
+
+.engineering-image p {
+  font-size: 1.2rem;
+  color: #ccc;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.engineering-image p:hover {
+  color: #0ff;
+  text-shadow: 0 0 20px #0ff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  from { text-shadow: 0 0 20px #0ff; }
+  to { text-shadow: 0 0 40px #0ff; }
 }

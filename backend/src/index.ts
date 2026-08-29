@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
-
-import { AppDataSource } from "./data-source"; // ✅ import the DataSource
+import { AppDataSource } from "./data-source";
 
 import authRoutes from "./routes/auth";
 import dashboardRoutes from "./routes/dashboard";
@@ -11,8 +10,6 @@ import mypostsRoutes from "./routes/myposts";
 
 const app = express();
 app.use(cors());
-
-// ✅ Use Express’s built-in JSON parser
 app.use(express.json());
 
 // Routes
@@ -23,9 +20,8 @@ app.use("/profile", profileRoutes);
 app.use("/myposts", mypostsRoutes);
 
 // Health check
-app.get("/", (req, res) => {
-  res.send("Backend running 🚀");
-});
+app.get("/", (req, res) => res.send("Backend running 🚀"));
+app.get("/health", (req, res) => res.json({ status: "ok" }));
 
 const PORT = process.env.PORT || 4000;
 

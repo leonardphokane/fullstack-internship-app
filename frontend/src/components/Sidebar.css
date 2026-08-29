@@ -1,0 +1,73 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background: rgba(10, 10, 20, 0.95);
+  border-right: 2px solid #0ff;
+  padding: 20px;
+  box-shadow: 0 0 20px #0ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  color: #0ff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #0ff;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.sidebar-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 25px #0ff;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link {
+  color: #bbb;
+  text-decoration: none;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.sidebar-link:hover {
+  background: #111;
+  color: #0ff;
+  box-shadow: 0 0 15px #0ff;
+  transform: translateX(5px);
+}
+
+.sidebar-link.active {
+  background: #0ff;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 20px #0ff;
+}
+
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.logout-btn:hover {
+  background: #111;
+  color: #fff;
+  box-shadow: 0 0 10px #0ff;
+}

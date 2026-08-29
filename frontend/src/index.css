@@ -1,13 +1,65 @@
-body {
+/* Reset & base styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0a0a0f 0%, #000 100%);
+  color: #fff;
+}
+
+/* Neon scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #0ff;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00cccc;
+}
+
+/* Global text glow */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 0 15px #0ff;
+}
+
+p {
+  color: #ccc;
+}
+
+/* Buttons (global theme) */
+button {
+  background: transparent;
+  border: 1px solid #0ff;
+  color: #0ff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: #0ff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Fade-in animation for page load */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: fadeIn 1s ease-in;
 }

@@ -96,7 +96,8 @@ export default function PostList({ token }: { token: string }) {
             <>
               <h3>{p.title}</h3>
               <p>{p.content}</p>
-              <small>By {p.author.email}</small>
+              {/* ✅ Guard against undefined author */}
+              <small>By {p.author ? p.author.email : "Unknown"}</small>
               <div style={{ marginTop: "8px" }}>
                 <button onClick={() => startEdit(p)}>Edit</button>
                 <button onClick={() => handleDelete(p.id)} style={{ marginLeft: "8px" }}>

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import api from "../api";
+import { getMyPosts } from "../services/posts";
+import { Post } from "shared/types";
 
 export default function MyPosts() {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    api.get("/myposts").then((res) => setPosts(res.data));
+    getMyPosts().then(setPosts);
   }, []);
 
   return (
-    <div className="flashcards">
+    <div>
+      <h2>My Posts</h2>
       {posts.map((p) => (
         <div key={p.id} className="card posts-card">
           <h3>{p.title}</h3>

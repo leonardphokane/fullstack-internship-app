@@ -4,13 +4,13 @@ import { User } from "./entities/User";
 import { Post } from "./entities/Post";
 import dotenv from "dotenv";
 
-dotenv.config(); // load .env
+dotenv.config();
 
 if (!process.env.DATABASE_URL) {
   throw new Error("❌ DATABASE_URL is not defined. Check your .env file.");
 }
 
-console.log("Connecting with:", process.env.DATABASE_URL); // 👈 log once
+console.log("Connecting with:", process.env.DATABASE_URL);
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -18,8 +18,5 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   logging: true,
   entities: [User, Post],
-  ssl: {
-    rejectUnauthorized: false, // 👈 accept self-signed cert
-  },
+  ssl: { rejectUnauthorized: false }, // Railway proxy uses SSL
 });
-

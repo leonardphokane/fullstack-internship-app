@@ -1,20 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { getPosts } from "../services/posts";   // ✅ use service helper
+import api from "../api";
+
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  author: { id: number; email: string };
+}
 
 export default function Posts() {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    getPosts().then(setPosts);
+    const fetchPosts = async () => {
+      try {
+        // ✅ Tell Axios the response type
+        const res = await api.get<Post[]>("/posts");
+        setPosts(res.data);
+      } catch (err: any) {
+        setError(err?.response?.data?.message || "Failed to load posts");
+      }
+    };
+    fetchPosts();
   }, []);
 
   return (
-    <div>
+    <div className="posts-container">
       <h2>Posts</h2>
-      {posts.map((p) => (
-        <div key={p.id} className="card posts-card">
-          <h3>{p.title}</h3>
-          <p>{p.content}</p>
+      {error && <p className="error">{error}</p>}
+      {posts.map((post) => (
+        <div key={post.id} className="post-card">
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
+          <small>By {post.author.email}</small>
         </div>
       ))}
     </div>

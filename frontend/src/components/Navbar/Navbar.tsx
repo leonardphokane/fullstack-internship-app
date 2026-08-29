@@ -1,5 +1,6 @@
+// src/components/Navbar/Navbar.tsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 interface Props {
@@ -8,16 +9,24 @@ interface Props {
 }
 
 export default function Navbar({ onLoginClick, onLogoutClick }: Props) {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    onLoginClick();
+    navigate("/login");
+  };
+
+  const handleLogout = () => {
+    onLogoutClick();
+    navigate("/login");
+  };
+
   return (
     <nav className="navbar">
-      <div className="logo">Full Stack Engineering</div>
-      <ul className="nav-links">
-        <li><Link to="/">Dashboard</Link></li>
-        <li><Link to="/posts">Posts</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li className="login" onClick={onLoginClick}>Login</li>
-        <li className="logout" onClick={onLogoutClick}>Logout</li>
-      </ul>
+      <div className="nav-actions">
+        <button className="login-btn" onClick={handleLogin}>Login</button>
+        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+      </div>
     </nav>
   );
 }

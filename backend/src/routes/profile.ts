@@ -1,19 +1,20 @@
 import { Router } from "express";
+import { authMiddleware } from "../middleware/authMiddleware";
 
 const router = Router();
 
-// GET /profile
-router.get("/", (req, res) => {
+// GET /profile (protected)
+router.get("/", authMiddleware, (req, res) => {
   res.json({
     name: "Leonard Phokane",
-    email: "leonard4@example.com",
+    email: (req as any).user?.email || "leonard4@example.com",
     role: "Full-Stack Engineer",
     bio: "End-to-end mastery — API, database, and interface.",
   });
 });
 
-// PUT /profile
-router.put("/", (req, res) => {
+// PUT /profile (protected)
+router.put("/", authMiddleware, (req, res) => {
   const { name, bio } = req.body;
   res.json({ message: "Profile updated", name, bio });
 });
